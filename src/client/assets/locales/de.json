@@ -1,0 +1,12 @@
+{
+  "APP_TITLE": "Einige Applikationstext",
+  "HOME": "Startseite >",
+  "USERS": "Benutzer >",
+  "PROFILE": "Profil >",
+  "BACK": "< Zurkuck",
+
+  "ROUTES.users": "benutzer",
+  "ROUTES.about": "ueber",
+  "ROUTES.profile": "profil",
+  "ROUTES.home": "startseite"
+}

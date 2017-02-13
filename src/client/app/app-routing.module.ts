@@ -1,15 +1,29 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { Http } from '@angular/http';
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { LocalizeRouterModule } from 'localize-router';
+
+export function createTranslateLoader(http: Http) {
+  return new TranslateStaticLoader(http, '/assets/locales', '.json');
+}
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home' }
+];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot([
-      /* define app module routes here, e.g., to lazily load a module
-         (do not place feature module routes here, use an own -routing.module.ts in the feature instead)
-       */
-    ])
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [Http]
+    }),
+    RouterModule.forRoot(routes),
+    LocalizeRouterModule.forRoot(routes),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule, LocalizeRouterModule, TranslateModule]
 })
 export class AppRoutingModule { }
 
