@@ -38,6 +38,9 @@ ts-node
 #IDE configuration files
 .idea
 *.iml
+.project
+.settings
+.vscode
 
 /tools/**/*.js
 dist

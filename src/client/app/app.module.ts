@@ -3,11 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-
-import { AboutModule } from './about/about.module';
-import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
-
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -15,8 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    AboutModule,
-    HomeModule,
     SharedModule.forRoot()
   ],
   declarations: [AppComponent],

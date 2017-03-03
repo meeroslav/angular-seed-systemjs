@@ -40,16 +40,20 @@ export class ProjectConfig extends SeedConfig {
     //
     // this.addPackagesBundles(additionalPackages);
     let additionalPackages: ExtendPackages[] = [{
-        name: 'ng2-translate',
+        name: '@ngx-translate/core',
         // Path to the package's bundle
-        path: 'node_modules/ng2-translate/bundles/ng2-translate.umd.js'
+        path: 'node_modules/@ngx-translate/core/bundles/core.umd.js'
+    }, {
+        name: '@ngx-translate/http-loader',
+        // Path to the package's bundle
+        path: 'node_modules/@ngx-translate/http-loader/bundles/http-loader.umd.js'
     }, {
       name: 'localize-router',
       // Path to the package's bundle
       path: 'node_modules/localize-router/bundles/localize-router.umd.js'
     }];
 
-    this.addPackagesBundles(additionalPackages);    
+    this.addPackagesBundles(additionalPackages);
 
     /* Add proxy middlewar */
     // this.PROXY_MIDDLEWARE = [

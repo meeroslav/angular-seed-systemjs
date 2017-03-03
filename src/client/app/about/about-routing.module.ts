@@ -1,18 +1,25 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about.component';
-import { TranslateModule } from 'ng2-translate';
+import { TranslateModule } from '@ngx-translate/core';
 import { LocalizeRouterModule } from 'localize-router';
+import { Observable } from 'rxjs/Observable';
 
+// let routes = [
+//   { path: '', component: AboutComponent },
+//   { path: 'admin', component: AboutComponent }
+// ];
 let routes = [
-  { path: 'about', component: AboutComponent }
+  { path: '', component: AboutComponent },
+  { path: ':id', component: AboutComponent },
+  { path: ':id/admin', component: AboutComponent },
 ];
 
 @NgModule({
   imports: [
     TranslateModule,
+    RouterModule.forChild(routes),
     LocalizeRouterModule.forChild(routes),
-    RouterModule.forChild(routes)
   ],
   exports: [RouterModule, LocalizeRouterModule, TranslateModule]
 })

@@ -8,3 +8,14 @@
 <ul>
   <li *ngFor="let name of names">{{name}}</li>
 </ul>
+
+<!--<a [routerLink]="'/about' | localize">ADMIN ABOUT</a>-->
+<p>
+  <a [routerLink]="'/about' | localize">ABOUT (normal)</a>
+  <a [routerLink]="['/about/', 35] | localize">ADMIN (deep url)</a>
+  <a [routerLink]="['/about/', 35, 'admin'] | localize">ADMIN TRANSLATE (test lazy load)</a>
+</p>
+<p>
+  <a [routerLink]="'/de'">DE</a>
+  <a [routerLink]="'/en'">EN</a>
+</p>

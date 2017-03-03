@@ -7,6 +7,7 @@
 
   "ROUTES.users": "benutzer",
   "ROUTES.about": "ueber",
+  "ROUTES.admin": "leitung",
   "ROUTES.profile": "profil",
   "ROUTES.home": "startseite"
 }
