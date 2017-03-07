@@ -5,8 +5,6 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LocalizeRouterModule } from 'localize-router';
 import { HomeModule } from './home/home.module';
-import { AboutModule } from './about/about.module';
-import { HomeComponent } from './home/home.component';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, '/assets/locales/', '.json');
